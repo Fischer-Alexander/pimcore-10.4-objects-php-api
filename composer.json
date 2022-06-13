@@ -11,7 +11,8 @@
     "pimcore/pimcore": "^10.0"
   },
   "require-dev": {
-    "codeception/codeception": "^4.1.12"
+    "codeception/codeception": "^4.1.12",
+    "symfony/maker-bundle": "^1.43"
   },
   "suggest": {
     "pimcore/data-hub": "Universal data interface for GraphQL, CSV and other formats"
