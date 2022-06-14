@@ -1,0 +1,27 @@
+pimcore:
+    assets:
+        image:
+            thumbnails:
+                definitions:
+                    blogList:
+                        items:
+                            -
+                                method: contain
+                                arguments:
+                                    width: 200
+                                    height: 150
+                                    forceResize: false
+                        medias: {  }
+                        name: blogList
+                        description: ''
+                        group: Areas
+                        format: SOURCE
+                        quality: 85
+                        highResolution: 0.0
+                        preserveColor: false
+                        preserveMetaData: false
+                        rasterizeSVG: false
+                        downloadable: false
+                        modificationDate: 1655225081
+                        creationDate: 1655225046
+                        preserveAnimation: false

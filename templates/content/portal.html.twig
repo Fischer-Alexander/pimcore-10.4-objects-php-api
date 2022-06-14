@@ -1,9 +1,23 @@
 {% extends 'layouts/layout.html.twig' %}
 
 {% block content %}
-    <h1>Hello, World!</h1>
-
-    {%  for blog in blogs %}
-        {{ dump(blog) }}
-    {% endfor %}
+    <div class="row">
+        <ul class="list-unstyled">
+            {%  for blog in blogs %}
+                <li class="media my-3">
+                            <a href="">
+                                {{ blog.image.thumbnail('blogList').html({imgAttributes: {class: 'mr-3'}}) | raw }}
+                            </a>
+                    <div class="media-body">
+                        <h5 class="mt-0">
+                            <a href="" class="text-decoration-none text-dark">
+                                {{ blog.title }}
+                            </a>
+                        </h5>
+                        {{ blog.teaser }}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
