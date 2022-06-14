@@ -1,0 +1,14 @@
+{% extends 'layouts/layout.html.twig' %}
+
+{% block content %}
+    <div id="main-content" class="main-content" >
+        <div class="page-header">
+            <h1>{{ pimcore_input('title', {'placeholder':'Titel'}) }}</h1>
+            <h2>{{ pimcore_input('subtitle', {'placeholder':'Untertitel'}) }}</h2>
+        </div>
+
+        {{ pimcore_areablock('content', {
+            'allowed': ['wysiwyg']
+        }) }}
+    </div>
+{% endblock %}
