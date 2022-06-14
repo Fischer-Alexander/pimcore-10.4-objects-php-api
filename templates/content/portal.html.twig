@@ -5,12 +5,12 @@
         <ul class="list-unstyled">
             {%  for blog in blogs %}
                 <li class="media my-3">
-                            <a href="">
+                            <a href="http://pimcore-basic/blogs/{{ blog.slug }}~n{{ blog.id }}">
                                 {{ blog.image.thumbnail('blogList').html({imgAttributes: {class: 'mr-3'}}) | raw }}
                             </a>
                     <div class="media-body">
                         <h5 class="mt-0">
-                            <a href="" class="text-decoration-none text-dark">
+                            <a href="http://pimcore-basic/blogs/{{ blog.slug }}~n{{ blog.id }}" class="text-decoration-none text-dark">
                                 {{ blog.title }}
                             </a>
                         </h5>
