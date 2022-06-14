@@ -2,4 +2,8 @@
 
 {% block content %}
     <h1>Hello, World!</h1>
+
+    {%  for blog in blogs %}
+        {{ dump(blog) }}
+    {% endfor %}
 {% endblock %}

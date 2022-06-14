@@ -10,6 +10,7 @@
  * - teaser [textarea]
  * - content [wysiwyg]
  * - slug [input]
+ * - date [date]
  * - image [image]
  */
 
@@ -19,7 +20,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Blog',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1655137530,
+   'modificationDate' => 1655200792,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -204,7 +205,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'mandatory' => false,
                  'noteditable' => false,
                  'index' => false,
-                 'locked' => NULL,
+                 'locked' => false,
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',
@@ -225,6 +226,32 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                 ),
                  'unique' => false,
                  'showCharCount' => false,
+                 'defaultValueGenerator' => '',
+              )),
+              5 => 
+              Pimcore\Model\DataObject\ClassDefinition\Data\Date::__set_state(array(
+                 'name' => 'date',
+                 'title' => 'Date',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => NULL,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'datatype' => 'data',
+                 'fieldtype' => 'date',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => true,
+                 'visibleSearch' => true,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'queryColumnType' => 'bigint(20)',
+                 'columnType' => 'bigint(20)',
+                 'defaultValue' => NULL,
+                 'useCurrentDate' => false,
                  'defaultValueGenerator' => '',
               )),
             ),
