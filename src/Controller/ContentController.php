@@ -59,6 +59,7 @@ class ContentController extends FrontendController
         $blogList = new Blog\Listing();
         $blogList->setOrderKey('date');
         $blogList->setOrder('DESC');
+        $blogList->setLimit(8);
 
         return $this->render('content/portal.html.twig', [
             'isPortal' => true,
