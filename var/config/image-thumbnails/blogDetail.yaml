@@ -1,0 +1,28 @@
+pimcore:
+    assets:
+        image:
+            thumbnails:
+                definitions:
+                    blogDetail:
+                        items:
+                            -
+                                method: cover
+                                arguments:
+                                    width: 330
+                                    height: 220
+                                    positioning: center
+                                    forceResize: false
+                        medias: {  }
+                        name: blogDetail
+                        description: ''
+                        group: ''
+                        format: SOURCE
+                        quality: 85
+                        highResolution: 0.0
+                        preserveColor: false
+                        preserveMetaData: false
+                        rasterizeSVG: false
+                        downloadable: false
+                        modificationDate: 1655289384
+                        creationDate: 1655288566
+                        preserveAnimation: false

@@ -1,13 +1,24 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-{{ blog.title }}
-</body>
-</html>
+{% extends 'layouts/layout.html.twig' %}
+
+{% block content %}
+
+
+<article class="pt-5 blog-post">
+    <h2 class="blog-post-title mb-1">{{ blog.title }}</h2>
+
+    <p class="pt-4">{{blog.teaser}}</p>
+
+    <div class="row">
+        <div class="col-12">
+            {{ blog.image.thumbnail('blogDetail').getHTML({imgAttributes: {class: 'img-thumbnail img-fluid w-100'}})|raw }}
+
+        </div>
+
+        <div class="col-12">
+            <p>{{ blog.content|raw }}</p>
+        </div>
+    </div>
+
+</article>
+
+{% endblock %}
