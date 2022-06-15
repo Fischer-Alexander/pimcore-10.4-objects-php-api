@@ -11,6 +11,7 @@
  * - content [wysiwyg]
  * - slug [input]
  * - date [date]
+ * - categories [manyToManyObjectRelation]
  * - image [image]
  */
 
@@ -20,7 +21,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Blog',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1655225131,
+   'modificationDate' => 1655273897,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -253,6 +254,45 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'defaultValue' => NULL,
                  'useCurrentDate' => false,
                  'defaultValueGenerator' => '',
+              )),
+              6 => 
+              Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
+                 'name' => 'categories',
+                 'title' => 'Categories',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => NULL,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'datatype' => 'data',
+                 'fieldtype' => 'manyToManyObjectRelation',
+                 'relationType' => true,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'classes' => 
+                array (
+                  0 => 
+                  array (
+                    'classes' => 'Category',
+                  ),
+                ),
+                 'pathFormatterClass' => '',
+                 'width' => '',
+                 'height' => '',
+                 'maxItems' => '',
+                 'visibleFields' => 'fullpath,id,name',
+                 'allowToCreateNewObject' => true,
+                 'optimizedAdminLoading' => false,
+                 'enableTextSelection' => false,
+                 'visibleFieldDefinitions' => 
+                array (
+                ),
               )),
             ),
              'locked' => false,
