@@ -1,0 +1,23 @@
+{% extends 'layouts/layout.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <ul class="list-unstyled">
+            {%  for blog in blogs %}
+                <li class="media my-3">
+                    <a href="http://pimcore-basic/blogs/{{ blog.slug }}~n{{ blog.id }}">
+                        {{ blog.image.thumbnail('blogList').html({imgAttributes: {class: 'mr-3'}}) | raw }}
+                    </a>
+                    <div class="media-body">
+                        <h5 class="mt-0">
+                            <a href="http://pimcore-basic/blogs/{{ blog.slug }}~n{{ blog.id }}" class="text-decoration-none text-dark">
+                                {{ blog.title }}
+                            </a>
+                        </h5>
+                        {{ blog.teaser }}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

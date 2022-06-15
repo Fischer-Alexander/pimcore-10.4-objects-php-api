@@ -6,6 +6,7 @@ use Pimcore\Controller\FrontendController;
 use Pimcore\Model\DataObject;
 use Pimcore\Model\DataObject\Blog;
 use Pimcore\Model\DataObject\Concrete;
+use Pimcore\Model\DataObject\Category;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -13,6 +14,43 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class BlogController extends FrontendController
 {
+
+
+    /**
+     * @Route("/categories/{categoryname}~c{category}", name="shop-category", defaults={"path"=""}, requirements={"path"=".*?", "categoryname"="[\w-]+", "category"="\d+"})
+     *
+     * @param Request $request
+     *
+     * @return Response
+     */
+    public function listingAction(Request $request)
+    {
+        $params = array_merge($request->query->all(), $request->attributes->all());
+        $categoryidrequested = $params['category'];
+
+        $blogList = new Blog\Listing();
+        $blogList->setOrderKey('date');
+        $blogList->setOrder('DESC');
+
+        $filterdBlogList = [];
+
+        foreach($blogList as $blog) {
+            $categoryid =  $blog->getCategories();
+            foreach ($categoryid as $category) {
+                if ($category->getId() == $categoryidrequested) {
+                    array_push($filterdBlogList, $blog);
+                }
+            }
+        }
+
+        return $this->render('blog/listing.html.twig', [
+           'blogs' => $filterdBlogList,
+        ]);
+
+    }
+
+
+
     /**
      * @Route("/blogs/{blogtitle}~n{blog}", name="blog-detail")
      */
