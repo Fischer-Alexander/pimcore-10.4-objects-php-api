@@ -1,16 +1,17 @@
 {% extends 'layouts/layout.html.twig' %}
 
 {% block content %}
-    <div id="main-content" class="main-content" >
-        <div class="page-header">
-            <h1>{{ pimcore_input('title', {'placeholder':'Titel'}) }}</h1>
-            <h2>{{ pimcore_input('subtitle', {'placeholder':'Untertitel'}) }}</h2>
+    <article class="pt-5 blog-post">
+        <h1 class="blog-post-title mb-1">{{ pimcore_input('title', {'placeholder':'Titel'}) }}</h1>
+        <p>{{ pimcore_input('subtitle', {'placeholder':'Untertitel'}) }}</p>
+        <div class="row">
+            <div class="col-12">
+                <p>
+                    {{ pimcore_areablock('content', {
+                        'allowed': ['wysiwyg','standard-teaser']
+                    }) }}
+                </p>
+            </div>
         </div>
-
-        {{ pimcore_areablock('content', {
-            'allowed': ['wysiwyg','standard-teaser']
-        }) }}
-
-
-    </div>
+    </article>
 {% endblock %}

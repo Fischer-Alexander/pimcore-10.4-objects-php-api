@@ -1,16 +1,17 @@
 {# @var blog \Pimcore\Model\DataObject\Blog #}
 
-<div class="teaser card custom-standard-card mb-4 shadow-sm">
-    <a href="http://pimcore-basic/blogs/{{ blog.slug }}~n{{ blog.id }}" class="text-decoration-none text-dark">
-                {{ blog.image.thumbnail('standardTeaser').html({imgAttributes: {class: 'img-fluid'}}) | raw }}
-        <div class="card-body">
-            <h4 class="card-title pricing-card-title text-uppercase">{{ blog.title }}</h4>
-            <p class="card-text">
-                {{ blog.teaser }}
-            </p>
-            <p>
-                <a href="http://pimcore-basic/blogs/{{ blog.slug }}~n{{ blog.id }}" class="btn btn-lg btn-secondary">Weiterlesen</a>
-            </p>
+
+
+<div class="row pt-4 mb-2">
+        <div class="col-md-12">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col-12 p-4 d-flex flex-column position-static">
+                    <h3 href="http://pimcore-basic/blogs/{{ blog.slug }}~n{{ blog.id }}" class="mb-3">{{ blog.title }}</h3>
+                    <p class="card-text mb-auto"> {{ blog.teaser }}</p>
+                    <a href="http://pimcore-basic/blogs/{{ blog.slug }}~n{{ blog.id }}" class="mt-3 stretched-link">Weiterlesen</a>
+                </div>
+
+            </div>
         </div>
-    </a>
 </div>
+
