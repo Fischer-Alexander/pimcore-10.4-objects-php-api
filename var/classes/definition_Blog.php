@@ -21,7 +21,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Blog',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1655273897,
+   'modificationDate' => 1655736655,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -225,7 +225,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'regexFlags' => 
                 array (
                 ),
-                 'unique' => false,
+                 'unique' => true,
                  'showCharCount' => false,
                  'defaultValueGenerator' => '',
               )),
@@ -263,7 +263,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'mandatory' => false,
                  'noteditable' => false,
                  'index' => false,
-                 'locked' => NULL,
+                 'locked' => false,
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',

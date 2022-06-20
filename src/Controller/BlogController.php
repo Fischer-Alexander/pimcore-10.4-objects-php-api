@@ -17,6 +17,25 @@ class BlogController extends FrontendController
 
 
     /**
+     * @Route("/blog/{slug}")
+     */
+    public function blogDetail(string $slug){
+        $entries = new DataObject\Blog\Listing();
+        $condition_string = "slug=". "'".$slug. "'";
+        $entries->setCondition($condition_string);
+        $results = [];
+        foreach ($entries as $entry) {
+            array_push($results, $entry);
+        }
+        $blogObject = $results[0];
+
+        return $this->render('blog/detail.html.twig', [
+           'blog' => $blogObject,
+        ]);
+    }
+
+
+    /**
      * @Route("/categories/{categoryname}~c{category}", name="shop-category", defaults={"path"=""}, requirements={"path"=".*?", "categoryname"="[\w-]+", "category"="\d+"})
      *
      * @param Request $request
